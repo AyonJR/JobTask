@@ -1,13 +1,15 @@
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { UserProvider } from './context/UserContext';
+import Navbar from './Components/Navbar';
 
-import './App.css'
-
-function App() {
-
+const App = () => {
   return (
-    <div>
+    <UserProvider>
+      <Navbar />
+      <Outlet />
+    </UserProvider>
+  );
+};
 
-    </div>
-  )
-}
-
-export default App
+export default App;

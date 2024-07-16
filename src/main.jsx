@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import App from './App.jsx';
 import './index.css';
-
 import Login from './Components/Auth/Login.jsx';
 import Register from './Components/Auth/Register.jsx';
 import Balance from './Components/User/Balance.jsx';
@@ -21,43 +20,49 @@ import ApproveUser from './Components/Admin/ApproveUser.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />, // You might want to set up the login or registration as the default route
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/balance",
-    element: <Balance />,
-  },
-  {
-    path: "/send-money",
-    element: <SendMoney />,
-  },
-  {
-    path: "/cash-out",
-    element: <CashOut />,
-  },
-  {
-    path: "/cash-in",
-    element: <CashIn />,
-  },
-  {
-    path: "/transactions",
-    element: <Transactions />,
-  },
-  {
-    path: "/admin/login",
-    element: <AdminLogin />,
-  },
-  {
-    path: "/admin/users",
-    element: <UserList />,
-  },
-  {
-    path: "/admin/approve-user",
-    element: <ApproveUser />,
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/balance",
+        element: <Balance />,
+      },
+      {
+        path: "/send-money",
+        element: <SendMoney />,
+      },
+      {
+        path: "/cash-out",
+        element: <CashOut />,
+      },
+      {
+        path: "/cash-in",
+        element: <CashIn />,
+      },
+      {
+        path: "/transactions",
+        element: <Transactions />,
+      },
+      {
+        path: "/admin/login",
+        element: <AdminLogin />,
+      },
+      {
+        path: "/admin/users",
+        element: <UserList />,
+      },
+      {
+        path: "/admin/approve-user",
+        element: <ApproveUser />,
+      },
+    ]
   },
 ]);
 
